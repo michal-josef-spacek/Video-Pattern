@@ -59,7 +59,7 @@ sub new {
 	return $self;
 }
 
-# Create value.
+# Create images to output directory.
 sub create {
 	my ($self, $output_dir) = @_;
 	my $delay = 0;
@@ -92,3 +92,150 @@ sub create {
 1;
 
 __END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+Video::Pattern - Video class for frame generation.
+
+=head1 SYNOPSIS
+
+ use Video::Pattern;
+ my $pattern = Video::Pattern->new(%parameters);
+ $pattern->create($output_dir);
+
+=head1 METHODS
+
+=over 8
+
+=item B<new(%parameters)>
+
+ Constructor
+
+=over 8
+
+=item * B<delay_generator>
+
+ Delay generator object.
+ Default value is Video::Delay::Const with 1_000 milisecond constant.
+
+=item * B<duration>
+
+ Video duration.
+ Default value is 10_000 miliseconds.
+
+=item * B<fps>
+
+ Frames per second.
+ Default value is 60.
+
+=item * B<image_generator>
+
+ Image generator object.
+ Default value is IBSmm::Generator::Image::Random object with 1920 width, 1080
+ height, image type 'image_type and random colors.
+
+=item * B<image_type>
+
+ Image type.
+ Default value is 'bmp' which isn't defined user 'image_generator'.
+
+=back
+
+=item B<create($output_dir)>
+
+ Create images to output directory.
+ Returns undef.
+
+=back
+
+=head1 ERRORS
+
+ From Class::Utils::set_params():
+         Unknown parameter '%s'.
+
+=head1 EXAMPLE
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use File::Temp qw(tempdir);
+ use File::Path qw(rmtree);
+ use Video::Pattern;
+
+ # Object.
+ my $obj = Video::Pattern->new(
+        'duration' => 10000,
+        'fps' => 2,
+ );
+
+ # Temporary directory.
+ my $temp_dir = tempdir();
+
+ # Create frames.
+ $obj->create($temp_dir);
+
+ # List and print files in temporary directory.
+ system "ls $temp_dir";
+
+ # Remove temporary directory.
+ rmtree $temp_dir;
+
+ # Output like:
+ # celkem 66968
+ # -rw-r--r-- 1 foobar foobar 6220854 20. čen 12.09 000.bmp
+ # lrwxrwxrwx 1 foobar foobar       7 20. čen 12.09 001.bmp -> 000.bmp
+ # -rw-r--r-- 1 foobar foobar 6220854 20. čen 12.09 002.bmp
+ # lrwxrwxrwx 1 foobar foobar       7 20. čen 12.09 003.bmp -> 002.bmp
+ # -rw-r--r-- 1 foobar foobar 6220854 20. čen 12.09 004.bmp
+ # lrwxrwxrwx 1 foobar foobar       7 20. čen 12.09 005.bmp -> 004.bmp
+ # -rw-r--r-- 1 foobar foobar 6220854 20. čen 12.09 006.bmp
+ # lrwxrwxrwx 1 foobar foobar       7 20. čen 12.09 007.bmp -> 006.bmp
+ # -rw-r--r-- 1 foobar foobar 6220854 20. čen 12.09 008.bmp
+ # lrwxrwxrwx 1 foobar foobar       7 20. čen 12.09 009.bmp -> 008.bmp
+ # -rw-r--r-- 1 foobar foobar 6220854 20. čen 12.09 010.bmp
+ # lrwxrwxrwx 1 foobar foobar       7 20. čen 12.09 011.bmp -> 010.bmp
+ # -rw-r--r-- 1 foobar foobar 6220854 20. čen 12.09 012.bmp
+ # lrwxrwxrwx 1 foobar foobar       7 20. čen 12.09 013.bmp -> 012.bmp
+ # -rw-r--r-- 1 foobar foobar 6220854 20. čen 12.09 014.bmp
+ # lrwxrwxrwx 1 foobar foobar       7 20. čen 12.09 015.bmp -> 014.bmp
+ # -rw-r--r-- 1 foobar foobar 6220854 20. čen 12.09 016.bmp
+ # lrwxrwxrwx 1 foobar foobar       7 20. čen 12.09 017.bmp -> 016.bmp
+ # -rw-r--r-- 1 foobar foobar 6220854 20. čen 12.09 018.bmp
+ # lrwxrwxrwx 1 foobar foobar       7 20. čen 12.09 019.bmp -> 018.bmp
+ # -rw-r--r-- 1 foobar foobar 6220854 20. čen 12.09 020.bmp
+
+=head1 DEPENDENCIES
+
+L<Class::Utils>,
+L<File::Basename>,
+L<File::Spec::Functions>,
+L<IBSmm::Generator::Image::Random>,
+L<Video::Delay::Const>.
+
+=head1 SEE ALSO
+
+L<Video::Delay::Array>,
+L<Video::Delay::Const>,
+L<Video::Delay::Func>.
+
+=head1 AUTHOR
+
+Michal Špaček L<mailto:skim@cpan.org>
+
+L<http://skim.cz>
+
+=head1 LICENSE AND COPYRIGHT
+
+BSD license.
+
+=head1 VERSION
+
+0.01
+
+=cut
