@@ -6,6 +6,7 @@ use warnings;
 
 # Modules.
 use Class::Utils qw(set_params);
+use File::Basename qw(fileparse);
 use File::Spec::Functions qw(catfile);
 use IBSmm::Generator::Image::Random;
 use Video::Delay::Const;
@@ -32,15 +33,27 @@ sub new {
 	$self->{'fps'} = 60;
 
 	# Image generator.
-	$self->{'image_generator'} = IBSmm::Generator::Image::Random->new(
-		'color_random' => 1,
-		'height' => 100,
-		'type' => 'bmp',
-		'width' => 100,
-	);
+	$self->{'image_generator'} = undef;
+
+	# Image type.
+	$self->{'image_type'} = 'bmp';
 
 	# Process params.
 	set_params($self, @params);
+
+	# Own image generator.
+	if (! defined $self->{'image_generator'}) {
+		$self->{'image_generator'} = IBSmm::Generator::Image::Random
+			->new(
+
+			'color_random' => 1,
+			'height' => 100,
+			'type' => $self->{'image_type'},
+			'width' => 100,
+		);
+	} else {
+		$self->{'image_type'} = $self->{'image_generator'}->type;
+	}
 
 	# Object.
 	return $self;
@@ -51,8 +64,12 @@ sub create {
 	my ($self, $output_dir) = @_;
 	my $delay = 0;
 	my $image;
-	foreach my $frame_num (0 .. $self->{'duration'} / 1000 * $self->{'fps'}) {
-		my $image_path = catfile($output_dir, (sprintf '%03d', $frame_num));
+	foreach my $frame_num (0 .. $self->{'duration'} / 1000
+		* $self->{'fps'}) {
+
+		my $image_path = catfile($output_dir,
+			(sprintf '%03d', $frame_num).'.'.
+			$self->{'image_type'});
 
 		# Create new image.
 		if ($delay <= 0) {
@@ -62,7 +79,8 @@ sub create {
 	
 		# Symlink to old image.		
 		} else {
-			symlink $image, $image_path;
+			my ($image_filename) = fileparse($image);
+			symlink $image_filename, $image_path;
 		}
 
 		# Decrement delay.
