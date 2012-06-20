@@ -47,9 +47,9 @@ sub new {
 			->new(
 
 			'color_random' => 1,
-			'height' => 100,
+			'height' => 1080,
 			'type' => $self->{'image_type'},
-			'width' => 100,
+			'width' => 1920,
 		);
 	} else {
 		$self->{'image_type'} = $self->{'image_generator'}->type;
