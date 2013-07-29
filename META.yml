@@ -26,13 +26,11 @@ no_index:
     - inc
     - t
 requires:
-  Cwd: 0
-  English: 0
-  Exporter: 0
-  List::MoreUtils: 0
-  Readonly: 0
-  perl: 5.6.2
+  Class::Utils: 0.03
+  File::Basename: 0
+  File::Spec::Functions: 0
   Image::Random: 0
+  Video::Delay::Const: 0
 resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Video-Pattern
   homepage: https://github.com/tupinek/Video-Pattern
