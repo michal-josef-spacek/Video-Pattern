@@ -8,7 +8,7 @@ use warnings;
 use Class::Utils qw(set_params);
 use File::Basename qw(fileparse);
 use File::Spec::Functions qw(catfile);
-use IBSmm::Generator::Image::Random;
+use Image::Random;
 use Video::Delay::Const;
 
 # Version.
@@ -43,9 +43,7 @@ sub new {
 
 	# Own image generator.
 	if (! defined $self->{'image_generator'}) {
-		$self->{'image_generator'} = IBSmm::Generator::Image::Random
-			->new(
-
+		$self->{'image_generator'} = Image::Random->new(
 			'color_random' => 1,
 			'height' => 1080,
 			'type' => $self->{'image_type'},
@@ -135,7 +133,7 @@ Video::Pattern - Video class for frame generation.
 =item * B<image_generator>
 
  Image generator object.
- Default value is IBSmm::Generator::Image::Random object with 1920 width, 1080
+ Default value is Image::Random object with 1920 width, 1080
  height, image type 'image_type and random colors.
 
 =item * B<image_type>
@@ -215,7 +213,7 @@ Video::Pattern - Video class for frame generation.
 L<Class::Utils>,
 L<File::Basename>,
 L<File::Spec::Functions>,
-L<IBSmm::Generator::Image::Random>,
+L<Image::Random>,
 L<Video::Delay::Const>.
 
 =head1 SEE ALSO
