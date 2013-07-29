@@ -3,12 +3,12 @@ abstract: 'Perl class for video frames pattern generating.'
 author:
   - 'Michal Špaček <skim@cpan.org>'
 build_requires:
-  Cwd: 0
   English: 0
   ExtUtils::MakeMaker: 6.36
-  File::Spec::Functions: 0
-  FindBin: 0
+  File::Object: 0.05
+  List::MoreUtils: 0
   Test::More: 0
+  Test::NoWarnings: 0
   Test::Pod: 0
   Test::Pod::Coverage: 0
 configure_requires:
