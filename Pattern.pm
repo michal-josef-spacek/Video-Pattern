@@ -152,8 +152,9 @@ Video::Pattern - Video class for frame generation.
 
 =head1 ERRORS
 
- From Class::Utils::set_params():
-         Unknown parameter '%s'.
+ new():
+         From Class::Utils::set_params():
+                 Unknown parameter '%s'.
 
 =head1 EXAMPLE
 
