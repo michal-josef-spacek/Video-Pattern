@@ -109,41 +109,41 @@ Video::Pattern - Video class for frame generation.
 
 =over 8
 
-=item B<new(%parameters)>
+=item C<new(%parameters)>
 
  Constructor
 
 =over 8
 
-=item * B<delay_generator>
+=item * C<delay_generator>
 
  Delay generator object.
  Default value is Video::Delay::Const with 1_000 milisecond constant.
 
-=item * B<duration>
+=item * C<duration>
 
  Video duration.
  Default value is 10_000 miliseconds.
 
-=item * B<fps>
+=item * C<fps>
 
  Frames per second.
  Default value is 60.
 
-=item * B<image_generator>
+=item * C<image_generator>
 
  Image generator object.
  Default value is Image::Random object with 1920 width, 1080
  height, image type 'image_type and random colors.
 
-=item * B<image_type>
+=item * C<image_type>
 
  Image type.
  Default value is 'bmp' which isn't defined user 'image_generator'.
 
 =back
 
-=item B<create($output_dir)>
+=item C<create($output_dir)>
 
  Create images to output directory.
  Returns undef.

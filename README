@@ -7,36 +7,36 @@ SYNOPSIS
      $pattern->create($output_dir);
 
 METHODS
-    new(%parameters)
+    "new(%parameters)"
              Constructor
 
-            *       delay_generator
+            *       "delay_generator"
 
                      Delay generator object.
                      Default value is Video::Delay::Const with 1_000 milisecond constant.
 
-            *       duration
+            *       "duration"
 
                      Video duration.
                      Default value is 10_000 miliseconds.
 
-            *       fps
+            *       "fps"
 
                      Frames per second.
                      Default value is 60.
 
-            *       image_generator
+            *       "image_generator"
 
                      Image generator object.
                      Default value is Image::Random object with 1920 width, 1080
                      height, image type 'image_type and random colors.
 
-            *       image_type
+            *       "image_type"
 
                      Image type.
                      Default value is 'bmp' which isn't defined user 'image_generator'.
 
-    create($output_dir)
+    "create($output_dir)"
              Create images to output directory.
              Returns undef.
 
