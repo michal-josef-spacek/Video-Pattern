@@ -10,6 +10,7 @@ abstract 'Perl class for video frames pattern generating.';
 author 'Michal Spacek <skim@cpan.org>';
 license 'bsd';
 name 'Video-Pattern';
+readme_from 'Pattern.pm';
 requires 'Class::Utils' => 0.03;
 requires 'File::Basename' => 0;
 requires 'File::Spec::Functions' => 0;
