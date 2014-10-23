@@ -23,6 +23,7 @@ meta-spec:
 name: Video-Pattern
 no_index:
   directory:
+    - examples
     - inc
     - t
 requires:
