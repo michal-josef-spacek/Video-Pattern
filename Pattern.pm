@@ -180,7 +180,7 @@ Video::Pattern - Video class for frame generation.
  $obj->create($temp_dir);
 
  # List and print files in temporary directory.
- system "ls $temp_dir";
+ system "ls -l $temp_dir";
 
  # Remove temporary directory.
  rmtree $temp_dir;
