@@ -20,3 +20,5 @@ t/Video-Pattern/00-use.t
 t/Video-Pattern/01-version.t
 t/Video-Pattern/02-pod_coverage.t
 t/Video-Pattern/03-pod.t
+t/Video-Pattern/04-new.t
+t/Video-Pattern/05-create.t
