@@ -32,7 +32,7 @@ requires:
   Class::Utils: 0.03
   File::Basename: 0
   File::Spec::Functions: 0
-  Image::Random: 0
+  Image::Random: 0.06
   Video::Delay::Const: 0
   perl: 5.6.0
 resources:

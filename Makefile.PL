@@ -14,7 +14,7 @@ readme_from 'Pattern.pm';
 requires 'Class::Utils' => 0.03;
 requires 'File::Basename' => 0;
 requires 'File::Spec::Functions' => 0;
-requires 'Image::Random' => 0;
+requires 'Image::Random' => 0.06;
 requires 'Video::Delay::Const' => 0;
 requires 'perl' => '5.6.0';
 resources 'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html'.

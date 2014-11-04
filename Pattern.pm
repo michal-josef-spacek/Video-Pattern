@@ -44,7 +44,6 @@ sub new {
 	# Own image generator.
 	if (! defined $self->{'image_generator'}) {
 		$self->{'image_generator'} = Image::Random->new(
-			'color_random' => 1,
 			'height' => 1080,
 			'type' => $self->{'image_type'},
 			'width' => 1920,
