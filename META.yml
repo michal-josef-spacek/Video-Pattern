@@ -4,8 +4,11 @@ author:
   - 'Michal Spacek <skim@cpan.org>'
 build_requires:
   English: 0
+  Error::Pure::Utils: '0.17'
   ExtUtils::MakeMaker: 6.36
   File::Object: 0.05
+  File::Temp: 0
+  Image::Random: 0
   Test::More: 0
   Test::NoWarnings: 0
   Test::Pod: 0
