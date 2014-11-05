@@ -73,7 +73,7 @@ EXAMPLE
      # Remove temporary directory.
      rmtree $temp_dir;
 
-     # Output like:
+     # Output on system supporting links like:
      # celkem 66968
      # -rw-r--r-- 1 foobar foobar 6220854 20. čen 12.09 000.bmp
      # lrwxrwxrwx 1 foobar foobar       7 20. čen 12.09 001.bmp -> 000.bmp
@@ -98,8 +98,10 @@ EXAMPLE
      # -rw-r--r-- 1 foobar foobar 6220854 20. čen 12.09 020.bmp
 
 DEPENDENCIES
-    Class::Utils, File::Basename, File::Spec::Functions, Image::Random,
-    Video::Delay::Const.
+    Class::Utils, English, File::Basename, File::Spec::Functions,
+    Image::Random, Video::Delay::Const.
+
+    On Windows File::Copy or Win32::Symlink.
 
 SEE ALSO
     Video::Delay::Array, Video::Delay::Const, Video::Delay::Func.

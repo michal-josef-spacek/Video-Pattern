@@ -91,10 +91,15 @@ sub create {
 sub _symlink {
 	my ($self, $from, $to) = @_;
 	if ($OSNAME eq 'MSWin32') {
-		require Win32::Symlink;
-		my $has_symlink = eval {
-			Win32::Symlink::symlink($from => $to);
+		eval {
+			require Win32::Symlink;
 		};
+		my $has_symlink;
+		if (! $EVAL_ERROR) {
+			$has_symlink = eval {
+				Win32::Symlink::symlink($from => $to);
+			};
+		}
 		if (! $has_symlink) {
 			require File::Copy;
 			copy($from, $to);
