@@ -6,6 +6,7 @@ use warnings;
 
 # Modules.
 use Class::Utils qw(set_params);
+use English;
 use File::Basename qw(fileparse);
 use File::Spec::Functions qw(catfile);
 use Image::Random;
@@ -77,7 +78,7 @@ sub create {
 		# Symlink to old image.		
 		} else {
 			my ($image_filename) = fileparse($image);
-			symlink $image_filename, $image_path;
+			$self->_symlink($image_filename, $image_path);
 		}
 
 		# Decrement delay.
@@ -86,6 +87,22 @@ sub create {
 	return;
 }
 
+# Symlink.
+sub _symlink {
+	my ($self, $from, $to) = @_;
+	if ($OSNAME eq 'MSWin32') {
+		require Win32::Symlink;
+		my $has_symlink = eval {
+			Win32::Symlink::symlink($from => $to);
+		};
+		if (! $has_symlink) {
+			require File::Copy;
+			copy($from, $to);
+		}
+	} else {
+		symlink $from, $to;
+	}
+}
 1;
 
 __END__
@@ -184,7 +201,7 @@ Video::Pattern - Video class for frame generation.
  # Remove temporary directory.
  rmtree $temp_dir;
 
- # Output like:
+ # Output on system supporting links like:
  # celkem 66968
  # -rw-r--r-- 1 foobar foobar 6220854 20. čen 12.09 000.bmp
  # lrwxrwxrwx 1 foobar foobar       7 20. čen 12.09 001.bmp -> 000.bmp
@@ -211,10 +228,13 @@ Video::Pattern - Video class for frame generation.
 =head1 DEPENDENCIES
 
 L<Class::Utils>,
+L<English>,
 L<File::Basename>,
 L<File::Spec::Functions>,
 L<Image::Random>,
 L<Video::Delay::Const>.
+
+On Windows L<File::Copy> or L<Win32::Symlink>.
 
 =head1 SEE ALSO
 
