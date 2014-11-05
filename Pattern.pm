@@ -74,8 +74,8 @@ sub create {
 			$self->{'image_generator'}->create($image_path);
 			$image = $image_path;
 			$delay = $self->{'delay_generator'}->delay;
-	
-		# Symlink to old image.		
+
+		# Symlink to old image.
 		} else {
 			my ($image_filename) = fileparse($image);
 			$self->_symlink($image_filename, $image_path);
