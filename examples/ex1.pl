@@ -27,7 +27,7 @@ system "ls -l $temp_dir";
 # Remove temporary directory.
 rmtree $temp_dir;
 
-# Output like:
+# Output on system supporting links like:
 # celkem 66968
 # -rw-r--r-- 1 foobar foobar 6220854 20. čen 12.09 000.bmp
 # lrwxrwxrwx 1 foobar foobar       7 20. čen 12.09 001.bmp -> 000.bmp
