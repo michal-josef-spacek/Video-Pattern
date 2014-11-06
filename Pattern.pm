@@ -102,7 +102,7 @@ sub _symlink {
 		}
 		if (! $has_symlink) {
 			require File::Copy;
-			copy($from, $to);
+			File::Copy::copy($from, $to);
 		}
 	} else {
 		symlink $from, $to;
