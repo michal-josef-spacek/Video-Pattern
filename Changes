@@ -1,3 +1,5 @@
+0.06
+
 0.05 2014-11-07T05:13:14+01:00
  - Fix copy, if doesn't exist Win32::Symlink on Window.
  - Update examples.
