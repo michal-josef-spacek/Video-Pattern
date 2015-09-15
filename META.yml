@@ -30,6 +30,7 @@ no_index:
     - t
 requires:
   Class::Utils: 0.03
+  Error::Pure: 0.22
   File::Basename: 0
   File::Spec::Functions: 0
   Image::Random: 0.06

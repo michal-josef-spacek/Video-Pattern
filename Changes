@@ -1,4 +1,5 @@
 0.06
+ - Add checks for 'fps' and 'duration' parameters.
  - Improve LICENSE AND COPYRIGHT section in doc.
  - Improve SEE ALSO section in doc.
  - Update Module::Install to 1.16 version.

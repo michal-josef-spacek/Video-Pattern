@@ -6,6 +6,7 @@ use warnings;
 
 # Modules.
 use Class::Utils qw(set_params);
+use Error::Pure qw(err);
 use English;
 use File::Basename qw(fileparse);
 use File::Spec::Functions qw(catfile);
@@ -41,6 +42,18 @@ sub new {
 
 	# Process params.
 	set_params($self, @params);
+
+	# Check fps value.
+	if (! defined $self->{'fps'} || $self->{'fps'} !~ m/^\d+$/ms) {
+		err "Parameter 'fps' must be numeric value.";
+	}
+
+	# Check for duration value.
+	if (! defined $self->{'duration'}
+		|| $self->{'duration'} !~ m/^\d+$/ms) {
+
+		err "Parameter 'duration' must be numeric value.";
+	}
 
 	# Own image generator.
 	if (! defined $self->{'image_generator'}) {
@@ -174,6 +187,8 @@ Video::Pattern - Video class for frame generation.
 =head1 ERRORS
 
  new():
+         Parameter 'duration' must be numeric value.
+         Parameter 'fps' must be numeric value.
          From Class::Utils::set_params():
                  Unknown parameter '%s'.
 

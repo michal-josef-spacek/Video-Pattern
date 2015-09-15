@@ -12,6 +12,7 @@ license 'bsd';
 name 'Video-Pattern';
 readme_from 'Pattern.pm';
 requires 'Class::Utils' => 0.03;
+requires 'Error::Pure' => 0.22;
 requires 'File::Basename' => 0;
 requires 'File::Spec::Functions' => 0;
 requires 'Image::Random' => 0.06;
