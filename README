@@ -104,7 +104,14 @@ DEPENDENCIES
     On Windows File::Copy or Win32::Symlink.
 
 SEE ALSO
-    Video::Delay::Array, Video::Delay::Const, Video::Delay::Func.
+    Video::Delay::Array
+        Video::Delay class for predefined list of delays.
+
+    Video::Delay::Const
+        Video::Delay class for constant delay.
+
+    Video::Delay::Func
+        Video::Delay class for delays defined by math function.
 
 REPOSITORY
     <https://github.com/tupinek/Video-Pattern>
