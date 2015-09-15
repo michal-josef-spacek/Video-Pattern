@@ -1,4 +1,4 @@
-0.06
+0.06 2015-09-15T22:00:51+02:00
  - Add checks for 'fps' and 'duration' parameters.
  - Improve LICENSE AND COPYRIGHT section in doc.
  - Improve SEE ALSO section in doc.
