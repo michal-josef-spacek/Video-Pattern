@@ -1,4 +1,5 @@
 0.06
+ - Improve LICENSE AND COPYRIGHT section in doc.
  - Update Module::Install to 1.16 version.
 
 0.05 2014-11-07T05:13:14+01:00
