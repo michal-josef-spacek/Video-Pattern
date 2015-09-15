@@ -2,7 +2,8 @@ TODO
 ====
 2. Pridat funkcni testy.
 3. Do _symlink udelat kontroly na provedeni.
-4.
+4. Support for duration in form 100ms, 1s
+5.
 
 Applied
 =======
