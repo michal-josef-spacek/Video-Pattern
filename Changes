@@ -1,4 +1,4 @@
-0.07
+0.07 2015-09-16T11:10:02+02:00
  - Improve 'duration' parameter to accept s/ms suffix.
  - Move admin tests to xt/ directory.
 

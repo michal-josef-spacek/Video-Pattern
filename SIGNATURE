@@ -14,15 +14,17 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 604d916da6e4a9c13e963ac96e3c3471defbc182 Changes
+SHA1 ccacc8e1d783aff6f45cdda256b5315b9ce54639 Changes
 SHA1 59eb82858eb4fad4d198101c284fbf4254443437 LICENSE
-SHA1 2922295268663f685d480d619a6987626f387a93 MANIFEST
-SHA1 c9bee234a292eba594f558afa09e8dba762b2a89 META.yml
-SHA1 e87646a71ebc016e4b0c923b95462a7d3f84acf5 Makefile.PL
-SHA1 5907bf834cd430c430c05e562d9dfe43433e1bc1 Pattern.pm
-SHA1 a088d0d04f5e94a53187caaa8a0ee0c54b0fb782 README
+SHA1 e32a7f210cebe14d9578b42bbe2062effbefd735 MANIFEST
+SHA1 9fd23ecc8a4db82fb0e514070f28760709a54b6a META.yml
+SHA1 253c9858cf2ad848be2d28f4ecba4d00dc77e9d0 Makefile.PL
+SHA1 c44b119df724f07ea97cdbf21a255d010c6ec281 Pattern.pm
+SHA1 4509fe70b712ca9c216833bd76be60d7c974b7ab README
 SHA1 0e4e782cd95680fdf0ee77cf74a8c3395157019f examples/ex1.pl
 SHA1 bce3c51bb369419603298064b78e14077b93af66 inc/Module/Install.pm
+SHA1 5c1a9d3a384a5262cbc105ab76d446047904c7fa inc/Module/Install/AuthorRequires.pm
+SHA1 d001b4b9a48395a8c4134b234a0e1789138427c5 inc/Module/Install/AuthorTests.pm
 SHA1 fe220f215f645500ce8f14ff5e19d9a28692af56 inc/Module/Install/Base.pm
 SHA1 b56ed8e42c600e08007d152cf0b1438a7c3b7f6e inc/Module/Install/Can.pm
 SHA1 99c531a17a67ce5250df2ae151cc48c80d914cde inc/Module/Install/Fetch.pm
@@ -31,20 +33,20 @@ SHA1 2e33e87882d60db3913da6284dd5295e5315e18a inc/Module/Install/Metadata.pm
 SHA1 79f5b4199f622e8b05aac266b0c39f6a85bb303f inc/Module/Install/ReadmeFromPod.pm
 SHA1 c830b819e61bda5eca077c6291293bba61b3b9f2 inc/Module/Install/Win32.pm
 SHA1 cb52b9d6f88d512d448a6f35ed0af0d1201a134b inc/Module/Install/WriteAll.pm
-SHA1 8ae6e75ed5af97c14da04b6d1a423d0e6c31d6d6 t/Video-Pattern/00-use.t
-SHA1 eb539de25ec39d2f2d7fde2a511828e087b3408c t/Video-Pattern/01-version.t
-SHA1 ae6fe96113870a92f3daca5326f95db6d05aaf25 t/Video-Pattern/02-pod_coverage.t
-SHA1 50af0d4adb878a26eb117c263b13910cd17c9b92 t/Video-Pattern/03-pod.t
-SHA1 bbd5b484b5621879b74e08c49682bff75c2ff53d t/Video-Pattern/04-new.t
-SHA1 cd3262208ac5844b7114b5eeaae9b71a7dfa587c t/Video-Pattern/05-create.t
+SHA1 8ae6e75ed5af97c14da04b6d1a423d0e6c31d6d6 t/Video-Pattern/01-use.t
+SHA1 d0ae73ca49c9a23a9bc6bdbad352151c7728ffe8 t/Video-Pattern/02-version.t
+SHA1 80e0c7bfc3f759afb2ab3f50457d3ba108234663 t/Video-Pattern/03-new.t
+SHA1 cd3262208ac5844b7114b5eeaae9b71a7dfa587c t/Video-Pattern/04-create.t
+SHA1 ae6fe96113870a92f3daca5326f95db6d05aaf25 xt/Video-Pattern/01-pod_coverage.t
+SHA1 50af0d4adb878a26eb117c263b13910cd17c9b92 xt/Video-Pattern/02-pod.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJV+Hj1AAoJEJe+XXKaIuTlsXEH/jBOwLuVo3RGfIweYNZxjLc5
-s0aWuBnJk5zrUUYut4qc3XPH6/GjN3HFSHwNLeSCyVjVrodD8nHxmta4ETFKzE4q
-jU10L3UmwDZKIau+XtG4yIfndcQ3RscI9oJlmq0h2LnLS5w2JRqCeIB8KDouiYp5
-qtDdfJUiSuM71BNyj/nUaKGZ0gxNj+Qr0OCkI4VOajsXpBQI1vg0nGH6LtAnbbIX
-Fsqvx7WoMzFScc1Q8JZeyoEu3ys+HRM0Sx1rtjyQUaxHqwUGRMUW3WVO/HH9ghhW
-gDigZQZjQMFSUGblu188s5e43r01YVmHF6lHpoH19fzDVfgRDolIrrhWaw4aj7U=
-=xG0Q
+iQEcBAEBAgAGBQJV+THrAAoJEJe+XXKaIuTlZ8QH/0/XlUWRgEZ078uXmjQJFwM+
+jfuGg3HL6mYByS0SjSKiloteovUhRS1D7fmxFe0zPELi4R6bcHNAFgLCg1VGKp6W
+UoW+u3LoxI8YvXafkCRR/O6WN/3NFYf+n91go8X408M6JUAvAQnGnSSjo5LvGrmA
+SUPvXQrz/8ilCFZ5LFqp4P68sg6BTZOyASw3O309HCSk/F8koA8ouBe/CcfNfPqm
+YKUUNRfsygWBtwXie2AFVAzb+Oho/sNeUoVei0phPHXGAICKAT+Bl95MkQluIXvu
+45LvWimlGsBbtoxmcI0Zadvr2WiVoMcIvZ2+mAx6ILnkTORqmBBEtYgsQ+nCWmc=
+=Y2Bv
 -----END PGP SIGNATURE-----
