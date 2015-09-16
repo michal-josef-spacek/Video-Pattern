@@ -11,7 +11,11 @@ use English;
 use File::Basename qw(fileparse);
 use File::Spec::Functions qw(catfile);
 use Image::Random;
+use Readonly;
 use Video::Delay::Const;
+
+# Constants.
+Readonly::Scalar our $EMPTY_STR => q{};
 
 # Version.
 our $VERSION = 0.07;
@@ -48,12 +52,8 @@ sub new {
 		err "Parameter 'fps' must be numeric value.";
 	}
 
-	# Check for duration value.
-	if (! defined $self->{'duration'}
-		|| $self->{'duration'} !~ m/^\d+$/ms) {
-
-		err "Parameter 'duration' must be numeric value.";
-	}
+	# Check and process duration value.
+	$self->_check_and_process_duration;
 
 	# Own image generator.
 	if (! defined $self->{'image_generator'}) {
@@ -96,6 +96,35 @@ sub create {
 
 		# Decrement delay.
 		$delay -= 1000 / $self->{'fps'};
+	}
+	return;
+}
+
+# Check and process duration.
+sub _check_and_process_duration {
+	my $self = shift;
+	my $err = 0;
+	if (! defined $self->{'duration'}) {
+		$err = 1;
+	} elsif ($self->{'duration'} =~ m/^(\d+)(\w*)$/ms) {
+		my $duration_value = $1;
+		my $duration_suffix = $2;
+		if ($duration_suffix ne $EMPTY_STR) {
+			if ($duration_suffix eq 's') {
+				$self->{'duration'} = $duration_value * 1000;
+			} elsif ($duration_suffix eq 'ms') {
+				$self->{'duration'} = $duration_value;
+			} else {
+				$err = 1;
+			}
+		}
+	} else {
+		$err = 1;
+	}
+
+	if ($err) {
+		err "Parameter 'duration' must be numeric value or numeric ".
+			"value with time suffix (s/ms).";
 	}
 	return;
 }
@@ -157,7 +186,10 @@ Video::Pattern - Video class for frame generation.
 =item * C<duration>
 
  Video duration.
- Default value is 10_000 miliseconds.
+ Possible suffixes are:
+ - ms for milisendons.
+ - s for seconds.
+ Default value is 10000 miliseconds.
 
 =item * C<fps>
 
@@ -187,7 +219,7 @@ Video::Pattern - Video class for frame generation.
 =head1 ERRORS
 
  new():
-         Parameter 'duration' must be numeric value.
+         Parameter 'duration' must be numeric value or numeric value with time suffix (s/ms).
          Parameter 'fps' must be numeric value.
          From Class::Utils::set_params():
                  Unknown parameter '%s'.
@@ -252,6 +284,7 @@ L<English>,
 L<File::Basename>,
 L<File::Spec::Functions>,
 L<Image::Random>,
+L<Readonly>,
 L<Video::Delay::Const>.
 
 On Windows L<File::Copy> or L<Win32::Symlink>.

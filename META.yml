@@ -33,6 +33,7 @@ requires:
   File::Basename: 0
   File::Spec::Functions: 0
   Image::Random: 0.06
+  Readonly: 0
   Video::Delay::Const: 0
   perl: 5.6.0
 resources:

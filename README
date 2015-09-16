@@ -18,7 +18,10 @@ METHODS
             *       "duration"
 
                      Video duration.
-                     Default value is 10_000 miliseconds.
+                     Possible suffixes are:
+                     - ms for milisendons.
+                     - s for seconds.
+                     Default value is 10000 miliseconds.
 
             *       "fps"
 
@@ -42,7 +45,7 @@ METHODS
 
 ERRORS
      new():
-             Parameter 'duration' must be numeric value.
+             Parameter 'duration' must be numeric value or numeric value with time suffix (s/ms).
              Parameter 'fps' must be numeric value.
              From Class::Utils::set_params():
                      Unknown parameter '%s'.
@@ -101,7 +104,7 @@ EXAMPLE
 
 DEPENDENCIES
     Class::Utils, English, File::Basename, File::Spec::Functions,
-    Image::Random, Video::Delay::Const.
+    Image::Random, Readonly, Video::Delay::Const.
 
     On Windows File::Copy or Win32::Symlink.
 

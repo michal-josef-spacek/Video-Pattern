@@ -6,7 +6,7 @@ use warnings;
 use English qw(-no_match_vars);
 use Error::Pure::Utils qw(clean);
 use Image::Random;
-use Test::More 'tests' => 9;
+use Test::More 'tests' => 14;
 use Test::NoWarnings;
 use Video::Pattern;
 
@@ -33,8 +33,9 @@ eval {
 		'duration' => undef,
 	);
 };
-is($EVAL_ERROR, "Parameter 'duration' must be numeric value.\n",
-	"Parameter 'duration' must be numeric value.");
+is($EVAL_ERROR, "Parameter 'duration' must be numeric value or numeric value ".
+	"with time suffix (s/ms).\n", "Parameter 'duration' must be numeric ".
+	"value or numeric value with time suffix (s/ms).");
 clean();
 
 # Test.
@@ -43,8 +44,20 @@ eval {
 		'duration' => 'foo',
 	);
 };
-is($EVAL_ERROR, "Parameter 'duration' must be numeric value.\n",
-	"Parameter 'duration' must be numeric value.");
+is($EVAL_ERROR, "Parameter 'duration' must be numeric value or numeric value ".
+	"with time suffix (s/ms).\n", "Parameter 'duration' must be numeric ".
+	"value or numeric value with time suffix (s/ms).");
+clean();
+
+# Test.
+eval {
+	Video::Pattern->new(
+		'duration' => '10000x',
+	);
+};
+is($EVAL_ERROR, "Parameter 'duration' must be numeric value or numeric value ".
+	"with time suffix (s/ms).\n", "Parameter 'duration' must be numeric ".
+	"value or numeric value with time suffix (s/ms).");
 clean();
 
 # Test.
@@ -69,6 +82,20 @@ clean();
 
 # Test.
 my $obj = Video::Pattern->new;
+isa_ok($obj, 'Video::Pattern');
+
+# Test.
+$obj = Video::Pattern->new(
+	'duration' => '1s',
+);
+is($obj->{'duration'}, 1000);
+isa_ok($obj, 'Video::Pattern');
+
+# Test.
+$obj = Video::Pattern->new(
+	'duration' => '10000ms',
+);
+is($obj->{'duration'}, 10000);
 isa_ok($obj, 'Video::Pattern');
 
 # Test.
