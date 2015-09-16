@@ -11,8 +11,6 @@ build_requires:
   Image::Random: 0
   Test::More: 0
   Test::NoWarnings: 0
-  Test::Pod: 0
-  Test::Pod::Coverage: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.36
 distribution_type: module
@@ -28,6 +26,7 @@ no_index:
     - examples
     - inc
     - t
+    - xt
 requires:
   Class::Utils: 0.03
   Error::Pure: 0.22
