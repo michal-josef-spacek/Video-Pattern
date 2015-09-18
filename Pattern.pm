@@ -16,6 +16,7 @@ use Video::Delay::Const;
 
 # Constants.
 Readonly::Scalar our $EMPTY_STR => q{};
+Readonly::Scalar our $MILISECONDS_IN_SECOND => 1000;
 
 # Version.
 our $VERSION = 0.08;
@@ -111,7 +112,8 @@ sub _check_and_process_duration {
 		my $duration_suffix = $2;
 		if ($duration_suffix ne $EMPTY_STR) {
 			if ($duration_suffix eq 's') {
-				$self->{'duration'} = $duration_value * 1000;
+				$self->{'duration'} = $duration_value
+					* $MILISECONDS_IN_SECOND;
 			} elsif ($duration_suffix eq 'ms') {
 				$self->{'duration'} = $duration_value;
 			} else {
