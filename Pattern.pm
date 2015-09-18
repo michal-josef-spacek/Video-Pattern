@@ -17,6 +17,8 @@ use Video::Delay::Const;
 # Constants.
 Readonly::Scalar our $EMPTY_STR => q{};
 Readonly::Scalar our $MILISECONDS_IN_SECOND => 1000;
+Readonly::Scalar our $MINUTS_IN_HOUR => 60;
+Readonly::Scalar our $SECONDS_IN_MINUTE => 60;
 
 # Version.
 our $VERSION = 0.08;
@@ -116,6 +118,15 @@ sub _check_and_process_duration {
 					* $MILISECONDS_IN_SECOND;
 			} elsif ($duration_suffix eq 'ms') {
 				$self->{'duration'} = $duration_value;
+			} elsif ($duration_suffix eq 'min') {
+				$self->{'duration'} = $duration_value
+					* $MILISECONDS_IN_SECOND
+					* $SECONDS_IN_MINUTE;
+			} elsif ($duration_suffix eq 'h') {
+				$self->{'duration'} = $duration_value
+					* $MILISECONDS_IN_SECOND
+					* $SECONDS_IN_MINUTE
+					* $MINUTS_IN_HOUR;
 			} else {
 				$err = 1;
 			}
@@ -191,6 +202,8 @@ Video::Pattern - Video class for frame generation.
  Possible suffixes are:
  - ms for milisendons.
  - s for seconds.
+ - min for minute.
+ - h for hour.
  Default value is 10000 miliseconds.
 
 =item * C<fps>

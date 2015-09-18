@@ -21,6 +21,8 @@ METHODS
                      Possible suffixes are:
                      - ms for milisendons.
                      - s for seconds.
+                     - min for minute.
+                     - h for hour.
                      Default value is 10000 miliseconds.
 
             *       "fps"
