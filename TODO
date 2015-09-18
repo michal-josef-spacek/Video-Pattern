@@ -2,7 +2,8 @@ TODO
 ====
 2. Pridat funkcni testy.
 3. Do _symlink udelat kontroly na provedeni.
-5.
+5. Predelat ciselne konstanty na Readonly hodnoty.
+6.
 
 Applied
 =======
