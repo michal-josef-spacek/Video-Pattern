@@ -21,7 +21,7 @@ Readonly::Scalar our $MINUTS_IN_HOUR => 60;
 Readonly::Scalar our $SECONDS_IN_MINUTE => 60;
 
 # Version.
-our $VERSION = 0.08;
+our $VERSION = 0.09;
 
 # Constructor.
 sub new {
@@ -339,6 +339,6 @@ L<http://skim.cz>
 
 =head1 VERSION
 
-0.08
+0.09
 
 =cut

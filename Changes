@@ -1,3 +1,5 @@
+0.09
+
 0.08 2015-09-18T14:49:39+02:00
  - Add support for min (minute) and h (hour) duration.
  - Fix author and test requires.
