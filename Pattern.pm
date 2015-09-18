@@ -126,7 +126,7 @@ sub _check_and_process_duration {
 
 	if ($err) {
 		err "Parameter 'duration' must be numeric value or numeric ".
-			"value with time suffix (s/ms).";
+			"value with time suffix.";
 	}
 	return;
 }
@@ -221,7 +221,7 @@ Video::Pattern - Video class for frame generation.
 =head1 ERRORS
 
  new():
-         Parameter 'duration' must be numeric value or numeric value with time suffix (s/ms).
+         Parameter 'duration' must be numeric value or numeric value with time suffix.
          Parameter 'fps' must be numeric value.
          From Class::Utils::set_params():
                  Unknown parameter '%s'.

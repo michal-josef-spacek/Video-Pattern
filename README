@@ -45,7 +45,7 @@ METHODS
 
 ERRORS
      new():
-             Parameter 'duration' must be numeric value or numeric value with time suffix (s/ms).
+             Parameter 'duration' must be numeric value or numeric value with time suffix.
              Parameter 'fps' must be numeric value.
              From Class::Utils::set_params():
                      Unknown parameter '%s'.

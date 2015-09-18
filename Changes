@@ -1,5 +1,7 @@
 0.08
  - Rewrite duration multiplicator constants to Readonly variables.
+ - Rewrite error message for duration to common text without concrete time
+   units.
 
 0.07 2015-09-16T11:10:02+02:00
  - Improve 'duration' parameter to accept s/ms suffix.
