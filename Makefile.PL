@@ -8,6 +8,8 @@ use inc::Module::Install;
 # Definition.
 abstract 'Perl class for video frames pattern generating.';
 author 'Michal Spacek <skim@cpan.org>';
+author_requires 'English' => 0;
+author_requires 'File::Object' => 0.05;
 author_requires 'Test::Pod' => 0;
 author_requires 'Test::Pod::Coverage' => 0;
 license 'bsd';
@@ -28,7 +30,6 @@ resources 'homepage' => 'https://github.com/tupinek/Video-Pattern';
 resources 'repository' => 'git://github.com/tupinek/Video-Pattern';
 test_requires 'English' => 0;
 test_requires 'Error::Pure::Utils' => '0.17';
-test_requires 'File::Object' => 0.05;
 test_requires 'File::Temp' => 0;
 test_requires 'Image::Random' => 0;
 test_requires 'Test::More' => 0;

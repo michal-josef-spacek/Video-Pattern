@@ -1,5 +1,6 @@
 0.08
  - Add support for min (minute) and h (hour) duration.
+ - Fix author and test requires.
  - Rewrite duration multiplicator constants to Readonly variables.
  - Rewrite error message for duration to common text without concrete time
    units.
