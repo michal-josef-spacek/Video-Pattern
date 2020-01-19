@@ -175,6 +175,7 @@ Video::Pattern - Video class for frame generation.
 =head1 SYNOPSIS
 
  use Video::Pattern;
+
  my $pattern = Video::Pattern->new(%parameters);
  $pattern->create($output_dir);
 
