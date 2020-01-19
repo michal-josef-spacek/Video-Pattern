@@ -319,7 +319,7 @@ Video::Delay class for delays defined by math function.
 
 =head1 REPOSITORY
 
-L<https://github.com/tupinek/Video-Pattern>
+L<https://github.com/michal-josef-spacek/Video-Pattern>
 
 =head1 AUTHOR
 
