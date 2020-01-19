@@ -1,6 +1,7 @@
 0.09
  - Update .travis.yml to reality.
  - Update Module::Install to 1.19 version.
+ - Update copyright years.
 
 0.08 2015-09-18T14:49:39+02:00
  - Add support for min (minute) and h (hour) duration.
