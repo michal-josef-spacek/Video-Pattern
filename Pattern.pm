@@ -328,13 +328,13 @@ L<https://github.com/tupinek/Video-Pattern>
 
 =head1 AUTHOR
 
-Michal Špaček L<mailto:skim@cpan.org>
+Michal Josef Špaček L<mailto:skim@cpan.org>
 
 L<http://skim.cz>
 
 =head1 LICENSE AND COPYRIGHT
 
- © 2012-2020 Michal Špaček
+ © 2012-2020 Michal Josef Špaček
  BSD 2-Clause License
 
 =head1 VERSION
