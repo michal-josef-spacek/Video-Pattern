@@ -1,10 +1,8 @@
 package Video::Pattern;
 
-# Pragmas.
 use strict;
 use warnings;
 
-# Modules.
 use Class::Utils qw(set_params);
 use Error::Pure qw(err);
 use English;
@@ -20,7 +18,6 @@ Readonly::Scalar our $MILISECONDS_IN_SECOND => 1000;
 Readonly::Scalar our $MINUTS_IN_HOUR => 60;
 Readonly::Scalar our $SECONDS_IN_MINUTE => 60;
 
-# Version.
 our $VERSION = 0.09;
 
 # Constructor.
@@ -241,11 +238,9 @@ Video::Pattern - Video class for frame generation.
 
 =head1 EXAMPLE
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use File::Temp qw(tempdir);
  use File::Path qw(rmtree);
  use Video::Pattern;

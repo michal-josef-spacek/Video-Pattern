@@ -53,11 +53,9 @@ ERRORS
                      Unknown parameter '%s'.
 
 EXAMPLE
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use File::Temp qw(tempdir);
      use File::Path qw(rmtree);
      use Video::Pattern;
